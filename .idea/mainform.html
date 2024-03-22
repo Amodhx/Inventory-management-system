@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Main form</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css" >
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <style>
-    section{
+    section {
         width: 100%;
         height: 100vh;
         background-image: url("assets/annie-spratt-pKpipZVVEC0-unsplash.jpg");
@@ -16,7 +17,8 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    section>header{
+
+    section > header {
         height: 50px;
         background-color: white;
         border-radius: 10px;
@@ -27,13 +29,15 @@
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
         z-index: 1000;
     }
-    section>header>img{
+
+    section > header > img {
         position: absolute;
         width: 90px;
         top: -20px;
         left: 3px;
     }
-    section>header>ul{
+
+    section > header > ul {
         position: absolute;
         font-weight: bold;
         font-size: 14px;
@@ -41,21 +45,25 @@
         left: 84px;
 
     }
-    section>header>ul>li{
+
+    section > header > ul > li {
         list-style: none;
         text-decoration: none;
         display: inline-block;
         margin-right: 25px;
     }
-    section>header>ul>li>a{
+
+    section > header > ul > li > a {
         color: rgba(125, 124, 124, 1);
         text-decoration: none;
     }
-    .div{
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    .div {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 12px;
     }
-    #trackOrder{
+
+    #trackOrder {
         width: 525px;
         height: 234px;
         background-color: white;
@@ -63,7 +71,8 @@
         top: 143px;
         left: 43px;
     }
-    #statics{
+
+    #statics {
         width: 389px;
         height: 234px;
         background-color: white;
@@ -71,7 +80,8 @@
         top: 143px;
         left: 636px;
     }
-    #calender{
+
+    #calender {
         width: 328px;
         height: 233px;
         background-color: white;
@@ -79,7 +89,8 @@
         top: 143px;
         left: 1101px;
     }
-    #recentOrder{
+
+    #recentOrder {
         width: 974px;
         height: 233px;
         background-color: white;
@@ -87,7 +98,8 @@
         bottom: 34px;
         left: 43px;
     }
-    #addOrder{
+
+    #addOrder {
         width: 328px;
         height: 233px;
         background-color: white;
@@ -95,7 +107,8 @@
         bottom: 34px;
         left: 1101px;
     }
-    #addOrder>div{
+
+    #addOrder > div {
         width: 100%;
         height: 100%;
         border: 4px dashed rgba(0, 56, 255, 1);
@@ -106,19 +119,22 @@
         left: 0;
         margin: auto;
     }
-    #addOrder>div>i{
+
+    #addOrder > div > i {
         position: absolute;
         top: 55px;
         left: 125px;
     }
-    #addOrder>div>button{
+
+    #addOrder > div > button {
         width: 172px;
         height: 38px;
         position: absolute;
         top: 141px;
         left: 77px;
     }
-    #trackOrder>h1{
+
+    #trackOrder > h1 {
         font-size: 19px;
         font-weight: bold;
         font-family: auto;
@@ -126,12 +142,14 @@
         top: 13px;
         left: 54px;
     }
-    #trackOrder>i{
+
+    #trackOrder > i {
         position: absolute;
         top: 7px;
         left: 11px;
     }
-    #trackOrder>div{
+
+    #trackOrder > div {
         position: absolute;
         width: 438px;
         height: 38px;
@@ -141,42 +159,48 @@
         border-radius: 15px;
         border: 1px solid gray;
     }
-    #trackOrder>div>h2:first-child{
+
+    #trackOrder > div > h2:first-child {
         font-size: 14px;
         position: absolute;
         top: 10px;
         left: 36px;
         cursor: pointer;
     }
-    #trackOrder>div>h2:nth-child(2){
+
+    #trackOrder > div > h2:nth-child(2) {
         font-size: 14px;
         position: absolute;
         top: 10px;
         left: 165px;
         cursor: pointer;
     }
-    #trackOrder>div>h2:nth-child(3){
+
+    #trackOrder > div > h2:nth-child(3) {
         font-size: 14px;
         position: absolute;
         top: 10px;
         left: 307px;
         cursor: pointer;
     }
-    #oid{
+
+    #oid {
         width: 2px;
         height: 37px;
         background: gray;
         position: absolute;
         left: 130px;
     }
-    #cid{
+
+    #cid {
         width: 2px;
         height: 37px;
         background: gray;
         position: absolute;
         left: 277px;
     }
-    #trackOrder>input{
+
+    #trackOrder > input {
         width: 436px;
         height: 37px;
         position: absolute;
@@ -185,56 +209,71 @@
         border-radius: 12px;
         color: gray;
     }
-    #trackOrder>button{
+
+    #trackOrder > button {
         position: absolute;
         bottom: 27px;
         right: 58px;
         width: 136px;
         background-color: rgba(42, 204, 194, 1);
-        border: 1px solid rgba(42, 204, 194, 1) ;
+        border: 1px solid rgba(42, 204, 194, 1);
         border-radius: 12px;
     }
-    .progress{
+
+    .progress {
         position: absolute;
         top: 45px;
     }
-    #p1{
+
+    #p1 {
         left: 25px;
     }
-    #p2{
+
+    #p2 {
         left: 55px;
     }
-    #p3{
+
+    #p3 {
         left: 85px;
     }
-    #p4{
+
+    #p4 {
         left: 115px;
     }
-    #p5{
+
+    #p5 {
         left: 145px;
     }
-    #p6{
+
+    #p6 {
         left: 175px;
     }
-    #p7{
+
+    #p7 {
         left: 205px;
     }
-    #p8{
+
+    #p8 {
         left: 235px;
     }
-    #p9{
+
+    #p9 {
         left: 265px;
     }
-    #p10{
+
+    #p10 {
         left: 295px;
     }
-    #p11{
+
+    #p11 {
         left: 325px;
     }
-    #p12{
+
+    #p12 {
         left: 355px;
     }
-    #statics>h1{
+
+    #statics > h1 {
         font-size: 20px;
         font-weight: bold;
         font-family: auto;
@@ -242,71 +281,97 @@
         top: 14px;
         left: 51px;
     }
-    #statics>i{
+
+    #statics > i {
         position: absolute;
         top: 7px;
         left: 11px;
     }
-    #statics>h4{
+
+    #statics > h4 {
         font-size: 12px;
         color: gray;
         position: absolute;
         top: 208px;
     }
-    #jan{
+
+    #jan {
         left: 20px;
     }
-    #feb{
+
+    #feb {
         left: 50px;
     }
-    #mar{
+
+    #mar {
         left: 80px;
     }
-    #apr{
+
+    #apr {
         left: 110px;
     }
-    #may{
+
+    #may {
         left: 140px;
     }
-    #jun{
+
+    #jun {
         left: 170px;
     }
-    #jul{
+
+    #jul {
         left: 200px;
     }
-    #aug{
+
+    #aug {
         left: 230px;
     }
-    #sep{
+
+    #sep {
         left: 260px;
     }
-    #oct{
+
+    #oct {
         left: 290px;
     }
-    #nov{
+
+    #nov {
         left: 320px;
     }
-    #dec{
+
+    #dec {
         left: 350px;
     }
 
-    @import url( https://fonts.googleapis.com/css?family=Montserrat );
+    @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-    .clearfix{*zoom:1}.clearfix:before,.clearfix:after{display:table;line-height:0;content:""}.clearfix:after{clear:both}
+    .clearfix {
+        *zoom: 1
+    }
+
+    .clearfix:before, .clearfix:after {
+        display: table;
+        line-height: 0;
+        content: ""
+    }
+
+    .clearfix:after {
+        clear: both
+    }
 
 
-    .calender{
-        margin:40px auto;
-        width:70%;
-        padding:10px;
-        background:#f7f7f7;
-        border:1px solid #ccc;
-        color:rgb(0, 127, 114);
-        position:relative;
+    .calender {
+        margin: 40px auto;
+        width: 70%;
+        padding: 10px;
+        background: #f7f7f7;
+        border: 1px solid #ccc;
+        color: rgb(0, 127, 114);
+        position: relative;
     }
 
     .calender:before,
-    .calender:after{
+    .calender:after {
         content: '';
         position: absolute;
         z-index: -1;
@@ -318,20 +383,22 @@
         background: inherit;
         box-shadow: inherit;
         -webkit-transform: rotate(2deg);
-        box-shadow:0 0 20px rgba(0,0,0,.4);
+        box-shadow: 0 0 20px rgba(0, 0, 0, .4);
     }
 
-    .calender::after{ -webkit-transform: rotate(-1deg) }
+    .calender::after {
+        -webkit-transform: rotate(-1deg)
+    }
 
-    .calender h1{
+    .calender h1 {
         font-family: 'Montserrat';
         width: 100%;
         text-align: center;
-        text-shadow: 1px 1px 0px rgba(0,0,0,.6);
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, .6);
         font-size: 16px;
     }
 
-    .calender .day{
+    .calender .day {
         display: block;
         width: 12.5%;
         height: 0;
@@ -347,11 +414,11 @@
         cursor: pointer;
     }
 
-    .calender .day:hover{
-        background:rgb(0, 127, 114);
-        color:#f7f7f7;
-        box-shadow:inset 0 0 20px rgba(0,0,0,.4);
-        text-shadow:1px 1px 2px rgba(0,0,0,.4);
+    .calender .day:hover {
+        background: rgb(0, 127, 114);
+        color: #f7f7f7;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, .4);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
     }
 
     .calender .day.current {
@@ -360,49 +427,55 @@
         box-shadow: inset 0 0 20px rgba(0, 0, 0, .4);
         text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
     }
-    #recentOrder>div:first-child{
+
+    #recentOrder > div:first-child {
         height: 98px;
         width: 354px;
-        background-image: linear-gradient(rgba(187, 208, 239, 1),rgba(202, 214, 231, 1));
+        background-image: linear-gradient(rgba(187, 208, 239, 1), rgba(202, 214, 231, 1));
         border-radius: 12px;
         position: absolute;
         top: 16px;
         left: 34px;
     }
-    #recentOrder>div:nth-child(2){
+
+    #recentOrder > div:nth-child(2) {
         height: 98px;
         width: 245px;
-        background-image: linear-gradient(rgba(179, 228, 216, 1),rgba(219, 240, 235, 1));
+        background-image: linear-gradient(rgba(179, 228, 216, 1), rgba(219, 240, 235, 1));
         border-radius: 12px;
         position: absolute;
         top: 16px;
         left: 420px;
     }
-    #recentOrder>div:nth-child(3){
+
+    #recentOrder > div:nth-child(3) {
         height: 98px;
         width: 225px;
-        background-image: linear-gradient(rgba(227, 166, 153, 1),rgba(239, 221, 219, 1));
+        background-image: linear-gradient(rgba(227, 166, 153, 1), rgba(239, 221, 219, 1));
         border-radius: 12px;
         position: absolute;
         top: 15px;
         left: 706px;
     }
-    #recentOrder>div:last-child{
+
+    #recentOrder > div:last-child {
         height: 98px;
         width: 899px;
-        background-image: linear-gradient(rgba(225, 239, 187, 1),rgba(202, 214, 231, 1));
+        background-image: linear-gradient(rgba(225, 239, 187, 1), rgba(202, 214, 231, 1));
         border-radius: 12px;
         position: absolute;
         top: 124px;
         left: 34px;
     }
-    #recentOrder>div:first-child>img{
+
+    #recentOrder > div:first-child > img {
         width: 52px;
         position: absolute;
         top: 16px;
         left: 10px;
     }
-    #recentOrder>div:first-child>h1{
+
+    #recentOrder > div:first-child > h1 {
         font-size: 18px;
         font-weight: bold;
         font-family: sans-serif;
@@ -411,7 +484,8 @@
         left: 77px;
         color: rgba(0, 102, 255, 1);
     }
-    #recentOrder>div:first-child>h4{
+
+    #recentOrder > div:first-child > h4 {
         font-size: 10px;
         font-weight: bold;
         font-family: sans-serif;
@@ -420,13 +494,15 @@
         left: 80px;
         color: rgba(0, 102, 255, 1);
     }
-    #recentOrder>div:nth-child(2)>img{
+
+    #recentOrder > div:nth-child(2) > img {
         width: 52px;
         position: absolute;
         top: 20px;
         left: 10px;
     }
-    #recentOrder>div:nth-child(2)>h4{
+
+    #recentOrder > div:nth-child(2) > h4 {
         font-size: 10px;
         font-weight: bold;
         font-family: sans-serif;
@@ -435,7 +511,8 @@
         left: 80px;
         color: rgba(0, 205, 155, 1);
     }
-    #recentOrder>div:nth-child(2)>h1{
+
+    #recentOrder > div:nth-child(2) > h1 {
         font-size: 18px;
         font-weight: bold;
         font-family: sans-serif;
@@ -444,13 +521,15 @@
         left: 79px;
         color: rgba(0, 205, 155, 1);
     }
-    #recentOrder>div:nth-child(3)>img{
+
+    #recentOrder > div:nth-child(3) > img {
         width: 52px;
         position: absolute;
         top: 20px;
         left: 10px;
     }
-    #recentOrder>div:nth-child(3)>h4{
+
+    #recentOrder > div:nth-child(3) > h4 {
         font-size: 10px;
         font-weight: bold;
         font-family: sans-serif;
@@ -459,7 +538,8 @@
         left: 80px;
         color: rgba(230, 21, 21, 1);
     }
-    #recentOrder>div:nth-child(3)>h1{
+
+    #recentOrder > div:nth-child(3) > h1 {
         font-size: 18px;
         font-weight: bold;
         font-family: sans-serif;
@@ -468,13 +548,15 @@
         left: 79px;
         color: rgba(230, 21, 21, 1);
     }
-    #recentOrder>div:nth-child(4)>img{
+
+    #recentOrder > div:nth-child(4) > img {
         width: 52px;
         position: absolute;
         top: 28px;
         left: 10px;
     }
-    #recentOrder>div:nth-child(4)>h4{
+
+    #recentOrder > div:nth-child(4) > h4 {
         font-size: 13px;
         font-weight: bold;
         font-family: sans-serif;
@@ -484,18 +566,126 @@
         color: rgba(84, 91, 0, 1);
     }
 
+    h6 {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    #ovrInven {
+        width: 94.8%;
+        height: 181px;
+        background-color: white;
+        position: absolute;
+        top: calc(100vh + 102px);
+        left: 41px;
+    }
+
+    #ovrInven > h1 {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: cursive;
+        position: absolute;
+        top: 11px;
+        left: 29px;
+    }
+
+    #line1 {
+        height: 126px;
+        width: 1px;
+        background-color: gray;
+        position: absolute;
+        top: 55px;
+        left: 318px;
+    }
+
+    #line2 {
+        height: 126px;
+        width: 1px;
+        background-color: gray;
+        position: absolute;
+        top: 55px;
+        left: 740px;
+    }
+
+    #line3 {
+        height: 126px;
+        width: 1px;
+        background-color: gray;
+        position: absolute;
+        top: 55px;
+        left: 1080px;
+    }
+
+    #category {
+        top: 49px;
+        left: 31px;
+        color: rgba(0, 71, 252, 1);
+    }
+
+    #products {
+        top: 50px;
+        left: 383px;
+        color: rgba(135, 169, 0, 1);
+    }
+
+    #selling {
+        top: 50px;
+        right: 494px;
+        color: rgba(0, 179, 50, 1);
+    }
+
+    #stock {
+        top: 49px;
+        right: 176px;
+        color: rgba(0, 136, 235, 1);
+    }
+
+    .secformdiv {
+        position: absolute;
+    }
+
+    #ovrInven > div > h4 {
+        font-size: 16px;
+    }
+    #ovrInven > div > h6{
+        font-size: 15px;
+        font-family: monospace;
+        color: gray;
+        margin-top: 20px;
+        width: 100px;
+        line-height: 25px;
+    }
+    #amount{
+        font-size: 15px;
+        font-family: monospace;
+        color: gray;
+        position: absolute;
+        top: 52px;
+        right: -163px;
+    }
+    #stockAv{
+        font-size: 15px;
+        font-family: monospace;
+        color: gray;
+        position: absolute;
+        top: 46px;
+        right: -163px;
+        line-height: 27px;
+    }
 </style>
 <body>
 <section>
     <header>
         <img src="assets/Abstract_business_arrow_up_logo_icon._Vector_design_template.__1_-removebg-preview.png">
         <ul>
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Inventory</a></li>
+            <li><a href="#dashBoard">Dashboard</a></li>
+            <li><a href="#inventory">Inventory</a></li>
             <li><a href="">Orders</a></li>
             <li><a href="">Customer</a></li>
         </ul>
     </header>
+    <h6 id="dashBoard"></h6>
     <div id="trackOrder" class="div">
         <i class="fa-regular fa-address-book fa-2x" style="color: #2accc2;"></i>
         <h1>View Order</h1>
@@ -508,45 +698,57 @@
             <div id="cid"></div>
         </div>
         <input type="text" class="form-control" id="floatingInput" placeholder="Enter Order ID / Ref ID">
-        <button type="button" class="btn btn-primary btn-sm"> View </button>
+        <button type="button" class="btn btn-primary btn-sm"> View</button>
     </div>
     <div id="statics" class="div">
         <i class="fa-solid fa-chart-simple fa-2x" style="color: #548EFF;"></i>
         <h1>Statics</h1>
-        <div id = "p1" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p1" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 25%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p2" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p2" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 33%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div  id = "p3" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p3" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 54%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p4" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p4" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 25%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p5" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p5" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 78%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p6" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p6" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 94%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p7" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p7" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 65%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p8" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p8" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 40%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p9" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p9" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 25%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p10" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p10" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 40%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p11" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p11" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 55%; width: 18px; border-radius: 12px"></div>
         </div>
-        <div id = "p12" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar" aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div id="p12" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="height: 50%; width: 18px; border-radius: 12px"></div>
         </div>
 
@@ -628,14 +830,48 @@
     <div id="addOrder" class="div">
         <div>
             <i class="fa-solid fa-cart-plus fa-4x" style="color: #0038FF;"></i>
-            <button  type="button" class="btn btn-outline-primary">Add Order</button>
+            <button type="button" class="btn btn-outline-primary">Add Order</button>
         </div>
     </div>
 </section>
-<section>
 
+
+<section>
+    <h6 id="inventory"></h6>
+    <div id="ovrInven" class="div">
+
+        <h1>Overoll Inventory</h1>
+
+        <div id="category" class="secformdiv">
+            <h4>Categories</h4>
+            <h6>24 <br> Last 07 Days</h6>
+        </div>
+
+        <div id="products" class="secformdiv">
+            <h4>Total Products</h4>
+            <h6>24 <br> Last 07 Days</h6>
+        </div>
+
+        <div id="selling" class="secformdiv">
+            <h4>Total Selling</h4>
+            <h6>24 <br> Last 07 Days</h6>
+            <h5 id="amount"> 24,000 LKR </h5>
+        </div>
+
+        <div id="stock" class="secformdiv">
+            <h4>Low Stock</h4>
+            <h6>24 <br>Low</h6>
+            <h5 id="stockAv"> Out of Stock <br> 4</h5>
+        </div>
+
+        <div id="line1"></div>
+        <div id="line2"></div>
+        <div id="line3"></div>
+    </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>
