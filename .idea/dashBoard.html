@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Main form</title>
+    <title>Dash Board</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -16,46 +16,6 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-    }
-
-    section > header {
-        height: 50px;
-        background-color: white;
-        border-radius: 10px;
-        width: 95%;
-        position: fixed;
-        top: 18px;
-        left: 40px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-        z-index: 1000;
-    }
-
-    section > header > img {
-        position: absolute;
-        width: 90px;
-        top: -20px;
-        left: 3px;
-    }
-
-    section > header > ul {
-        position: absolute;
-        font-weight: bold;
-        font-size: 14px;
-        top: 15px;
-        left: 84px;
-
-    }
-
-    section > header > ul > li {
-        list-style: none;
-        text-decoration: none;
-        display: inline-block;
-        margin-right: 25px;
-    }
-
-    section > header > ul > li > a {
-        color: rgba(125, 124, 124, 1);
-        text-decoration: none;
     }
 
     .div {
@@ -571,120 +531,57 @@
         left: 0;
         right: 0;
     }
-
-    #ovrInven {
-        width: 94.8%;
-        height: 181px;
-        background-color: white;
+    #headerImg{
         position: absolute;
-        top: calc(100vh + 102px);
-        left: 41px;
+        top: -19px;
+        width: 91px;
+        left: 10px;
     }
-
-    #ovrInven > h1 {
-        font-size: 20px;
-        font-weight: bold;
-        font-family: cursive;
-        position: absolute;
-        top: 11px;
-        left: 29px;
+    #header{
+        height: 50px;
+        border-radius: 10px;
+        width: 95%;
+        position: fixed;
+        top: 18px;
+        left: 40px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        z-index: 1000;
     }
-
-    #line1 {
-        height: 126px;
-        width: 1px;
-        background-color: gray;
-        position: absolute;
-        top: 55px;
-        left: 318px;
+    #list{
+        margin-left: 65px;
     }
-
-    #line2 {
-        height: 126px;
-        width: 1px;
-        background-color: gray;
-        position: absolute;
-        top: 55px;
-        left: 740px;
-    }
-
-    #line3 {
-        height: 126px;
-        width: 1px;
-        background-color: gray;
-        position: absolute;
-        top: 55px;
-        left: 1080px;
-    }
-
-    #category {
-        top: 49px;
-        left: 31px;
-        color: rgba(0, 71, 252, 1);
-    }
-
-    #products {
-        top: 50px;
-        left: 383px;
-        color: rgba(135, 169, 0, 1);
-    }
-
-    #selling {
-        top: 50px;
-        right: 494px;
-        color: rgba(0, 179, 50, 1);
-    }
-
-    #stock {
-        top: 49px;
-        right: 176px;
-        color: rgba(0, 136, 235, 1);
-    }
-
-    .secformdiv {
-        position: absolute;
-    }
-
-    #ovrInven > div > h4 {
-        font-size: 16px;
-    }
-    #ovrInven > div > h6{
-        font-size: 15px;
-        font-family: monospace;
-        color: gray;
-        margin-top: 20px;
-        width: 100px;
-        line-height: 25px;
-    }
-    #amount{
-        font-size: 15px;
-        font-family: monospace;
-        color: gray;
-        position: absolute;
-        top: 52px;
-        right: -163px;
-    }
-    #stockAv{
-        font-size: 15px;
-        font-family: monospace;
-        color: gray;
-        position: absolute;
-        top: 46px;
-        right: -163px;
-        line-height: 27px;
+    #list>li{
+        margin-right: 27px;
     }
 </style>
 <body>
 <section>
-    <header>
-        <img src="assets/Abstract_business_arrow_up_logo_icon._Vector_design_template.__1_-removebg-preview.png">
-        <ul>
-            <li><a href="#dashBoard">Dashboard</a></li>
-            <li><a href="#inventory">Inventory</a></li>
-            <li><a href="">Orders</a></li>
-            <li><a href="">Customer</a></li>
-        </ul>
-    </header>
+    <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="headerImg" src="assets/Abstract_business_arrow_up_logo_icon._Vector_design_template.__1_-removebg-preview.png" alt="Bootstrap" width="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul id="list" class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Customer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <h6 id="dashBoard"></h6>
     <div id="trackOrder" class="div">
         <i class="fa-regular fa-address-book fa-2x" style="color: #2accc2;"></i>
@@ -836,39 +733,6 @@
 </section>
 
 
-<section>
-    <h6 id="inventory"></h6>
-    <div id="ovrInven" class="div">
-
-        <h1>Overoll Inventory</h1>
-
-        <div id="category" class="secformdiv">
-            <h4>Categories</h4>
-            <h6>24 <br> Last 07 Days</h6>
-        </div>
-
-        <div id="products" class="secformdiv">
-            <h4>Total Products</h4>
-            <h6>24 <br> Last 07 Days</h6>
-        </div>
-
-        <div id="selling" class="secformdiv">
-            <h4>Total Selling</h4>
-            <h6>24 <br> Last 07 Days</h6>
-            <h5 id="amount"> 24,000 LKR </h5>
-        </div>
-
-        <div id="stock" class="secformdiv">
-            <h4>Low Stock</h4>
-            <h6>24 <br>Low</h6>
-            <h5 id="stockAv"> Out of Stock <br> 4</h5>
-        </div>
-
-        <div id="line1"></div>
-        <div id="line2"></div>
-        <div id="line3"></div>
-    </div>
-</section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
