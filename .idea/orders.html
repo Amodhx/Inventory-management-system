@@ -10,14 +10,14 @@
 </head>
 <style>
 
-    #headerImg{
+    #headerImg {
         position: absolute;
         top: -19px;
         width: 91px;
         left: 10px;
     }
 
-    #header{
+    #header {
         height: 50px;
         border-radius: 10px;
         width: 95%;
@@ -28,11 +28,11 @@
         z-index: 1000;
     }
 
-    #list{
+    #list {
         margin-left: 65px;
     }
 
-    #list>li{
+    #list > li {
         margin-right: 27px;
     }
 
@@ -40,6 +40,7 @@
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 12px;
     }
+
     section {
         overflow: hidden;
         width: 100%;
@@ -49,6 +50,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     #ovrInven {
         width: 94.8%;
         height: 181px;
@@ -125,7 +127,8 @@
     #ovrInven > div > h4 {
         font-size: 16px;
     }
-    #ovrInven > div > h6{
+
+    #ovrInven > div > h6 {
         font-size: 15px;
         font-family: monospace;
         color: gray;
@@ -133,7 +136,8 @@
         width: 100px;
         line-height: 25px;
     }
-    #amount{
+
+    #amount {
         font-size: 15px;
         font-family: monospace;
         color: gray;
@@ -141,7 +145,8 @@
         top: 52px;
         right: -163px;
     }
-    #stockAv{
+
+    #stockAv {
         font-size: 15px;
         font-family: monospace;
         color: gray;
@@ -150,7 +155,8 @@
         right: -163px;
         line-height: 27px;
     }
-    #order{
+
+    #order {
         width: 94.8%;
         height: 368px;
         background-color: white;
@@ -159,6 +165,7 @@
         left: 41px;
         border-radius: 12px;
     }
+
     div.scroll {
         margin: 4px, 4px;
         padding: 4px;
@@ -169,19 +176,22 @@
         overflow-y: auto;
         text-align: justify;
     }
-    #tbl{
+
+    #tbl {
         position: absolute;
         top: 64px;
         left: 26px;
     }
-    #line{
+
+    #line {
         height: 1px;
         width: 100%;
         background-color: gray;
         top: 57px;
         position: absolute;
     }
-    #order>h1{
+
+    #order > h1 {
         position: absolute;
         font-size: 18px;
         font-family: monospace;
@@ -189,7 +199,8 @@
         top: 17px;
         left: 31px;
     }
-    #order>button{
+
+    #order > button {
         position: absolute;
         top: 12px;
         left: 91%;
@@ -197,7 +208,8 @@
         height: 35px;
         font-size: small;
     }
-    #active{
+
+    #active {
         color: rgba(44, 103, 255, 1);
     }
 </style>
@@ -206,9 +218,12 @@
     <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img id="headerImg" src="assets/Abstract_business_arrow_up_logo_icon._Vector_design_template.__1_-removebg-preview.png" alt="Bootstrap" width="50">
+                <img id="headerImg"
+                     src="assets/Abstract_business_arrow_up_logo_icon._Vector_design_template.__1_-removebg-preview.png"
+                     alt="Bootstrap" width="50">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -265,7 +280,7 @@
     <div id="order" class="scroll">
         <h1>Orders</h1>
         <button type="button" class="btn btn-primary">Add Order</button>
-        <div id="line" ></div>
+        <div id="line"></div>
         <table id="tbl" class="table">
             <thead>
             <tr>
