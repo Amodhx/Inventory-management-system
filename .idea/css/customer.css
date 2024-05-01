@@ -1,0 +1,145 @@
+
+
+.div {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 12px;
+}
+
+
+#ovrCus{
+    width: 94.8%;
+    height: 181px;
+    background-color: white;
+    position: absolute;
+    top: calc(102px);
+    left: 41px;
+}
+
+#ovrCus > h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    top: 11px;
+    left: 29px;
+}
+
+#line1Cus {
+    height: 126px;
+    width: 1px;
+    background-color: gray;
+    position: absolute;
+    top: 44px;
+    left: 318px;
+}
+
+#categoryCus {
+    top: 59px;
+    left: 31px;
+    color: rgba(0, 71, 252, 1);
+}
+
+.secformdiv {
+    position: absolute;
+}
+
+#ovrCus > div > h4 {
+    font-size: 16px;
+}
+
+#ovrCus > div > h6 {
+    font-size: 15px;
+    font-family: monospace;
+    color: gray;
+    margin-top: 20px;
+    width: 100px;
+    line-height: 25px;
+}
+
+#amount {
+    font-size: 15px;
+    font-family: monospace;
+    color: gray;
+    position: absolute;
+    top: 52px;
+    right: -163px;
+}
+
+#stockAv {
+    font-size: 15px;
+    font-family: monospace;
+    color: gray;
+    position: absolute;
+    top: 35px;
+    right: -163px;
+    line-height: 27px;
+}
+
+#order {
+    width: 94.8%;
+    height: 368px;
+    background-color: white;
+    position: absolute;
+    top: calc(314px);
+    left: 41px;
+    border-radius: 12px;
+}
+
+div.scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: green;
+    width: 500px;
+    height: 110px;
+    overflow-x: scroll;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+#tblCus {
+    position: absolute;
+    top: 64px;
+    left: 26px;
+}
+
+#lineCus {
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+    top: 57px;
+    position: absolute;
+}
+
+#order > h1 {
+    position: absolute;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: bold;
+    top: 17px;
+    left: 31px;
+}
+
+#active {
+    color: rgba(44, 103, 255, 1);
+}
+#btn{
+    position: absolute;
+    right: 16vw;
+    width: 128px;
+    top: 12vh;
+    height: 36px;
+    font-size: smaller;
+    font-weight: bold;
+}
+#search{
+    width: 44vw;
+    position: absolute;
+    top: 12vh;
+    left: 24vw;
+}
+#search>i{
+    right: 127px;
+    position: absolute;
+    z-index: 10;
+    top: 11px;
+}

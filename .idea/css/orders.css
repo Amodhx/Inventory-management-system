@@ -1,0 +1,167 @@
+
+.div {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 12px;
+}
+
+#ovrOrders {
+    width: 94.8%;
+    height: 181px;
+    background-color: white;
+    position: absolute;
+    top: calc(102px);
+    left: 41px;
+}
+
+#ovrOrders > h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: cursive;
+    position: absolute;
+    top: 11px;
+    left: 29px;
+}
+
+#line1Order {
+    height: 126px;
+    width: 1px;
+    background-color: gray;
+    position: absolute;
+    top: 55px;
+    left: 318px;
+}
+
+#line2Order {
+    height: 126px;
+    width: 1px;
+    background-color: gray;
+    position: absolute;
+    top: 55px;
+    left: 740px;
+}
+
+#line3Order {
+    height: 126px;
+    width: 1px;
+    background-color: gray;
+    position: absolute;
+    top: 55px;
+    left: 1080px;
+}
+
+#categoryOrder {
+    top: 59px;
+    left: 31px;
+    color: rgba(0, 71, 252, 1);
+}
+
+#productsOrder {
+    top: 59px;
+    left: 383px;
+    color: rgba(135, 169, 0, 1);
+}
+
+#sellingOrders {
+    top: 59px;
+    right: 513px;
+    color: rgba(0, 179, 50, 1);
+}
+
+#stockOrders {
+    top: 59px;
+    right: 176px;
+    color: rgba(0, 136, 235, 1);
+}
+
+.secformdiv {
+    position: absolute;
+}
+
+#ovrOrders > div > h4 {
+    font-size: 16px;
+}
+
+#ovrOrders > div > h6 {
+    font-size: 15px;
+    font-family: monospace;
+    color: gray;
+    margin-top: 20px;
+    width: 100px;
+    line-height: 25px;
+}
+
+#amountpgOrder {
+    font-size: 15px;
+    font-family: monospace;
+    color: gray;
+    position: absolute;
+    top: 52px;
+    right: -163px;
+}
+
+#stockAvpgOrder {
+    font-size: 15px;
+    font-family: monospace;
+    color: gray;
+    position: absolute;
+    top: 35px;
+    right: -163px;
+    line-height: 27px;
+}
+
+#orderpgOrder {
+    width: 94.8%;
+    height: 368px;
+    background-color: white;
+    position: absolute;
+    top: calc(314px);
+    left: 41px;
+    border-radius: 12px;
+}
+
+div.scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: green;
+    width: 500px;
+    height: 110px;
+    overflow-x: scroll;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+#tblOrders {
+    position: absolute;
+    top: 64px;
+    left: 26px;
+}
+
+#lineOrder {
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+    top: 57px;
+    position: absolute;
+}
+
+#orderpgOrder > h1 {
+    position: absolute;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: bold;
+    top: 17px;
+    left: 31px;
+}
+
+#orderpgOrder > button {
+    position: absolute;
+    top: 12px;
+    left: 91%;
+    width: 94px;
+    height: 35px;
+    font-size: small;
+}
+
+#active {
+    color: rgba(44, 103, 255, 1);
+}

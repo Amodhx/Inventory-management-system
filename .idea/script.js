@@ -1,0 +1,57 @@
+$("#dashBoadrdbtn").on('click',()=>{
+    $("#DashBoadrdSection").css({
+       display:"block"
+    });
+    $("#customerSection").css({
+        display:"none"
+    });
+    $("#inventorySection").css({
+        display:"none"
+    });
+    $("#orderSection").css({
+        display:"none"
+    });
+});
+$("#inventorybtn").on('click',()=>{
+    $("#DashBoadrdSection").css({
+        display:"none"
+    });
+    $("#customerSection").css({
+        display:"none"
+    });
+    $("#inventorySection").css({
+        display:"block"
+    });
+    $("#orderSection").css({
+        display:"none"
+    });
+});
+$("#ordersBtn").on('click',()=>{
+    $("#DashBoadrdSection").css({
+        display:"none"
+    });
+    $("#customerSection").css({
+        display:"none"
+    });
+    $("#inventorySection").css({
+        display:"none"
+    });
+    $("#orderSection").css({
+        display:"block"
+    });
+});
+$("#customerBtn").on('click',()=>{
+    $("#DashBoadrdSection").css({
+        display:"none"
+    });
+    $("#customerSection").css({
+        display:"block"
+    });
+    $("#inventorySection").css({
+        display:"none"
+    });
+    $("#orderSection").css({
+        display:"none"
+    });
+});
+
