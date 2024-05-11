@@ -244,9 +244,7 @@
             </ul>
         </div>
 
-        <button id="btn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelAddCustomer">Add
-            Customer
-        </button>
+        <button id="btn" type="button" class="btn btn-primary">Add Customer</button>
 
         <div id="line1Cus"></div>
     </div>
@@ -262,8 +260,6 @@
                 <th scope="col">Address</th>
                 <th scope="col">Contact</th>
                 <th scope="col">Date</th>
-                <th scope="col">Update</th>
-                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody id="customerTbody">
@@ -272,58 +268,41 @@
             </tbody>
         </table>
     </div>
-
     <div id="modelAddCustomer" class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5">Add new Order</h1>
+                    <h1 id="customerModelHeader" class="modal-title fs-5">Add new Customer</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <form class="row g-3">
                         <div class="col-md-6">
-                            <label for="inputProduct" class="form-label">Customer ID</label>
-                            <input type="text" class="form-control">
+                            <label class="form-label">Customer ID</label>
+                            <input id="customerIdField" type="text" class="form-control">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputbuyPrice" class="form-label">Item ID</label>
-                            <input type="text" class="form-control">
+                            <label  class="form-label">Contact Number</label>
+                            <input id="customerContactField" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Customer Name</label>
+                            <input id="cusrtomerNameField" type="text" class="form-control">
                         </div>
                         <div class="col-12">
-                            <label for="inputEXDate" class="form-label">Expire date</label>
-                            <input type="date" class="form-control">
-                        </div>
-                        <div class="col-12">
-                            <label for="inputSelprice" class="form-label">Selling price</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputQTY" class="form-label">QTY</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputBrand" class="form-label">Brand</label>
-                            <select class="form-select">
-                                <option selected>Choose...</option>
-                                <option>Munchee</option>
-                                <option>Maliben</option>
-                                <option>Kist</option>
-                                <option>Munchee</option>
-                            </select>
+                            <label class="form-label">Address</label>
+                            <input id="customerAddressField" type="text" class="form-control">
                         </div>
                     </form>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button id="customerDeleteBtn" type="button" class="btn btn-secondary">Close</button>
+                    <button id="customerSavebtn" type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-
 </section>
 <section id="inventorySection">
     <h6 id="inventory"></h6>
@@ -338,7 +317,7 @@
 
         <div id="products" class="secformdiv">
             <h4>Total Products</h4>
-            <h6>24 <br> Last 07 Days</h6>
+            <h6>24</h6>
         </div>
 
         <div id="selling" class="secformdiv">
@@ -360,7 +339,7 @@
 
     <div id="items" class="scroll">
         <h1>Items</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalInventory" >Add Item</button>
+        <button id="btnAddItem" type="button" class="btn btn-primary" >Add Item</button>
         <div id="line"></div>
         <table id="tbl" class="table">
             <thead>
@@ -372,8 +351,6 @@
                 <th scope="col">Selling price</th>
                 <th scope="col">Expire date</th>
                 <th scope="col">Availability</th>
-                <th scope="col">Update</th>
-                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody id="inventoryTbody">
@@ -384,38 +361,38 @@
     </div>
 
 
-    <div  class="modal fade" id="exampleModalInventory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div   class="modal fade" id="exampleModalInventory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" >
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Inventory</h1>
+                    <h1 class="modal-title fs-5" id="ItemModelHeader">Add Inventory</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
                     <form class="row g-3">
                         <div class="col-md-6">
-                            <label for="inputProduct" class="form-label">Product</label>
+                            <label class="form-label">Product</label>
                             <input  type="text" class="form-control" id="inputProduct">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputbuyPrice" class="form-label">Buying price</label>
+                            <label  class="form-label">Buying price</label>
                             <input type="text" class="form-control" id="inputbuyPrice">
                         </div>
                         <div class="col-12">
-                            <label for="inputEXDate" class="form-label">Expire date</label>
+                            <label  class="form-label">Expire date</label>
                             <input type="date" class="form-control" id="inputEXDate">
                         </div>
                         <div class="col-12">
-                            <label for="inputSelprice" class="form-label">Selling price</label>
+                            <label class="form-label">Selling price</label>
                             <input type="text" class="form-control" id="inputSelprice">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputQTY" class="form-label">QTY</label>
+                            <label class="form-label">QTY</label>
                             <input type="text" class="form-control" id="inputQTY">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputBrand" class="form-label">Brand</label>
+                            <label  class="form-label">Brand</label>
                             <select id="inputBrand" class="form-select">
                                 <option selected>Choose...</option>
                                 <option>Munchee</option>
@@ -428,7 +405,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="itemModelClose" type="button" class="btn btn-secondary">Close</button>
                     <button id="inventorySavebtn" type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
@@ -649,5 +626,6 @@
         crossorigin="anonymous"></script>
 <script src=".idea/script.js"></script>
 <script type="module" src="controller/inventory.js"></script>
+<script type="module" src="controller/customer.js"></script>
 </body>
 </html>
