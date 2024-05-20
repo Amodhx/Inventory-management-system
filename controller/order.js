@@ -140,3 +140,14 @@ function loadTablePlaceOrder() {
 function settingNetTotal() {
     $("#orderTotal").val(netTotal);
 }
+
+
+$("#discountValue").on('keyup',()=>{
+    let pre = $("#discountValue").val();
+    let dis = netTotal / 100 ;
+    $("#netPay").val(netTotal - (dis * +pre));
+});
+
+$("#placeOrderEndBtn").on('click',()=>{
+
+});
