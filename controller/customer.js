@@ -82,6 +82,7 @@ $("#customerTbody").on('click', 'tr', function () {
     $("#cusrtomerNameField").val(name);
     $("#customerAddressField").val(address);
 
+    removeValidation();
 });
 
 $("#customerDeleteBtn").on('click',function () {
@@ -111,6 +112,11 @@ $("#btn").on('click', function () {
     $("#customerDeleteBtn").css({
         background : "gray"
     })
+    removeValidation()
+})
+
+
+function removeValidation() {
 
     $("#customerIdField").removeClass('is-invalid');
     $("#customerContactField").removeClass('is-invalid');
@@ -122,7 +128,7 @@ $("#btn").on('click', function () {
     $("#customerContactField").removeClass('is-valid');
     $("#cusrtomerNameField").removeClass('is-valid');
     $("#customerAddressField").removeClass('is-valid');
-})
+}
 
 
 $("#customerIdField").on('keyup',()=>{

@@ -111,10 +111,28 @@ $("#inventoryTbody").on('click','tr',function () {
     $("#ItemModelHeader").text("Update Item")
     $("#inventorySavebtn").text("Update")
 
-
-
+    removeValidation()
 });
 
+function removeValidation() {
+    $("#inputProductId").removeClass('is-invalid');
+
+    $("#inputProductId").removeClass('is-valid');
+}
+
+// validation
+
+$("#inputProductId").on('keyup',()=>{
+    const regex = /^I\d{2}-\d{3}$/;
+    let val = $("#inputProductId").val();
+    if (regex.test(val)){
+        $("#inputProductId").addClass('is-valid');
+        $("#inputProductId").removeClass('is-invalid');
+    }else {
+        $("#inputProductId").addClass('is-invalid');
+        $("#inputProductId").removeClass('is-valid');
+    }
+})
 
 
 
@@ -149,5 +167,10 @@ $("#btnAddItem").on('click',function () {
 
     $("#ItemModelHeader").text("Add Item")
     $("#inventorySavebtn").text("Save Changes")
+
+
+
+ removeValidation()
+
 
 })
