@@ -34,6 +34,79 @@
     #orderSection{
         display: none;
     }
+    #modelContent{
+        position: relative;
+        width: 283%;
+        left: -31vw;
+    }
+    #custDrop{
+        width: 178px;
+        position: relative;
+        left: 27px;
+        top: 5px;
+    }
+    #custN{
+        position: relative;
+        left: 31vw;
+        width: 23vw;
+        top: -39px;
+    }
+    #custA{
+        position: relative;
+        left: 65vw;
+        width: 23vw;
+        top: -95px;
+    }
+    #itemDrop{
+        width: 178px;
+        position: relative;
+        left: 27px;
+        top: -6vh;
+    }
+    #itemN{
+        position: relative;
+        left: 15vw;
+        width: 18vw;
+        top: -89px;
+    }
+    #itemQNH{
+        position: relative;
+        left: 50vw;
+        width: 10vw;
+        top: -205px;
+    }
+    #itemQTYGet{
+        position: relative;
+        left: 63vw;
+        width: 10vw;
+        top: -263px;
+    }
+    #btnAddcart{
+        position: relative;
+        left: 77vw;
+        width: 11vw;
+        top: -310px;
+    }
+    #tblItemCart{
+        top: -29vh;
+        position: relative;
+    }
+    #itemP{
+        position: relative;
+        top: -21vh;
+        width: 14vw;
+        left: 35vw;
+    }
+    #netTotal{
+        left: -30vw;
+    }
+    #discount{
+        left: -28vw;
+    }
+    #netPaytotal{
+        left: -32vw;
+    }
+
 </style>
 <body>
 <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
@@ -279,7 +352,7 @@
                     <form class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label">Customer ID</label>
-                            <input id="customerIdField" type="text" class="form-control">
+                            <input id="customerIdField" placeholder="C00-001" type="text" class="form-control" required>
                         </div>
                         <div class="col-md-6">
                             <label  class="form-label">Contact Number</label>
@@ -344,6 +417,7 @@
         <table id="tbl" class="table">
             <thead>
             <tr>
+                <th scope="col">Code</th>
                 <th scope="col">Product</th>
                 <th scope="col">Buying price</th>
                 <th scope="col">QTY</th>
@@ -371,6 +445,10 @@
                 <div class="modal-body">
 
                     <form class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Item Code</label>
+                            <input  type="text" class="form-control" id="inputProductId">
+                        </div>
                         <div class="col-md-6">
                             <label class="form-label">Product</label>
                             <input  type="text" class="form-control" id="inputProduct">
@@ -447,7 +525,7 @@
 
     <div id="orderpgOrder" class="scroll">
         <h1>Orders</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Add Order</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#placeOrderModel" >Add Order</button>
         <div id="lineOrder"></div>
         <table id="tblOrders" class="table">
             <thead>
@@ -471,145 +549,104 @@
                 <td>Cash</td>
                 <td><input type="button" value="Delete"></td>
             </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
-            <tr>
-                <th scope="row">01</th>
-                <td>05</td>
-                <td>Amodh Nanditha</td>
-                <td>2024/04/25</td>
-                <td>250.00</td>
-                <td>Cash</td>
-                <td><input type="button" value="Delete"></td>
-            </tr>
 
             </tbody>
         </table>
     </div>
 
-    <div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div id="placeOrderModel" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content" >
+            <div id="modelContent" class="modal-content" >
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5">Add new Order</h1>
+                    <h1 class="modal-title fs-5">Place Order</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <label for="inputProduct" class="form-label">Customer ID</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputbuyPrice" class="form-label">Item ID</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-12">
-                            <label for="inputEXDate" class="form-label">Expire date</label>
-                            <input type="date" class="form-control">
-                        </div>
-                        <div class="col-12">
-                            <label for="inputSelprice" class="form-label">Selling price</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputQTY" class="form-label">QTY</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputBrand" class="form-label">Brand</label>
-                            <select class="form-select">
-                                <option selected>Choose...</option>
-                                <option>Munchee</option>
-                                <option>Maliben</option>
-                                <option>Kist</option>
-                                <option>Munchee</option>
-                            </select>
-                        </div>
+                    <div id="custDrop" class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Customer Id
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <form id="custN" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="CustomerNameOrder" placeholder="name@example.com">
+                        <label for="CustomerNameOrder">Customer Name</label>
+                    </form>
+                    <form id="custA" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="CustomerAddressOrder" placeholder="name@example.com">
+                        <label for="CustomerAddressOrder">Customer Address</label>
                     </form>
 
+                    <div id="itemDrop" class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Item Code
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <form id="itemN" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="ItemName" placeholder="name@example.com">
+                        <label for="ItemName">Item Name</label>
+                    </form>
+                    <form id="itemP" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="ItemPrice" placeholder="name@example.com">
+                        <label for="ItemPrice">Item Price</label>
+                    </form>
+                    <form id="itemQNH" class="form-floating col-md-3">
+                        <input type="email" class="form-control" id="ItemQtyOnHand" placeholder="name@example.com">
+                        <label for="ItemQtyOnHand">QTY on hand</label>
+                    </form>
+                    <form id="itemQTYGet" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="itemQtygetting" placeholder="name@example.com">
+                        <label for="itemQtygetting">QTY Buy</label>
+                    </form>
+                    <button id="btnAddcart" type="button" class="btn btn-primary">Add to cart!</button>
+
+                    <table id="tblItemCart" class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>05</td>
+                            <td>Amodh Nanditha</td>
+                            <td>300.00</td>
+                            <td>5</td>
+                            <td>250.00</td>
+                            <td><input type="button" value="Delete"></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
+                    <form id="netTotal" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="orderTotal" placeholder="name@example.com">
+                        <label for="orderTotal">Total Amount</label>
+                    </form>
+                    <form id="discount" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="discountValue" placeholder="name@example.com">
+                        <label for="discountValue">Discount(%)</label>
+                    </form>
+                    <form id="netPaytotal" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="netPay" placeholder="name@example.com">
+                        <label for="netPay">Net Pay</label>
+                    </form>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
@@ -617,7 +654,7 @@
         </div>
     </div>
 
-</section>
+    </section>
 
 
 <script src=".idea/assets/lib/jquery-3.7.1.min.js"></script>

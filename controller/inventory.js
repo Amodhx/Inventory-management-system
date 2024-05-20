@@ -22,7 +22,7 @@ $("#inventorySavebtn").on('click',()=>{
         modal.hide();
 
     }else {
-        console.log("save")
+        let id = $("#inputProductId").val();
         let productName = $("#inputProduct").val();
         let buyPrice = $("#inputbuyPrice").val();
         let exDate = $("#inputEXDate").val();
@@ -30,7 +30,7 @@ $("#inventorySavebtn").on('click',()=>{
         let qty = $("#inputQTY").val();
         let brand = $("#inputBrand").val();
 
-        let item = new InventoryModel(productName, buyPrice, selPrice, qty, brand, exDate);
+        let item = new InventoryModel(id,productName, buyPrice, selPrice, qty, brand, exDate);
         inventories.push(item);
         loadInventoryTable();
 
@@ -51,12 +51,13 @@ function loadInventoryTable(){
     inventories.map(function (item) {
         var value =
            ` <tr>
-                <td class="itemName-val" >${item.productName}</td>
-                <td class="itemBuyPrice-val">${item.buyingPrice}</td>
-                <td class="itemQty-val">${item.qty}</td>
-                <td class="itemBrand-val">${item.brand}</td>
-                <td class="itemSelPrice-val">${item.sellingPrice}</td>
-                <td class="itemExDate-val">${item.expireDate}</td>
+                <td class="itemCode-val">${item.iCode}</td>
+                <td class="itemName-val" >${item.iName}</td>
+                <td class="itemBuyPrice-val">${item.iBuyPrice}</td>
+                <td class="itemQty-val">${item.iQty}</td>
+                <td class="itemBrand-val">${item.iBrand}</td>
+                <td class="itemSelPrice-val">${item.iSelPrice}</td>
+                <td class="itemExDate-val">${item.iEXDate}</td>
                 <td>"In Stock"</td>
             </tr>`
 
@@ -64,6 +65,7 @@ function loadInventoryTable(){
     });
 }
 function clearFileds() {
+    $("#inputProductId").val("");
     $("#inputProduct").val("");
     $("#inputbuyPrice").val("");
     $("#inputEXDate").val("");
@@ -78,6 +80,7 @@ let index;
 
 // table row click
 $("#inventoryTbody").on('click','tr',function () {
+    let iid = $(this).find('.itemCode-val').text();
     let iname = $(this).find('.itemName-val').text();
     let ibuyPrice = $(this).find('.itemBuyPrice-val').text();
     let iqty = $(this).find('.itemQty-val').text();
@@ -88,6 +91,7 @@ $("#inventoryTbody").on('click','tr',function () {
     index = $(this).index();
     console.log( iexDate )
 
+    $("#inputProductId").val(iid);
     $("#inputProduct").val(iname);
     $("#inputbuyPrice").val(ibuyPrice);
     $("#inputEXDate").val(iexDate);

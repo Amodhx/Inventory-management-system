@@ -16,21 +16,25 @@ $("#customerSavebtn").on('click', () => {
         var modal = bootstrap.Modal.getInstance(modelel)
         modal.hide();
     } else {
-
+        var regexId=/^C00-\d{3}$/;
         var regexContact = /^\d{10}$/;
         if (regexContact.test($("#customerContactField").val())) {
-            let cusId = $("#customerIdField").val();
-            let cusContact = $("#customerContactField").val();
-            let cusName = $("#cusrtomerNameField").val();
-            let cusAddress = $("#customerAddressField").val();
-            let date = Date.now();
+            if (regexId.test($("#customerIdField").val())) {
+                let cusId = $("#customerIdField").val();
+                let cusContact = $("#customerContactField").val();
+                let cusName = $("#cusrtomerNameField").val();
+                let cusAddress = $("#customerAddressField").val();
+                let date = Date.now();
 
-            let customer = new CustomerModel(cusId, cusName, cusAddress, cusContact, date);
-            customers.push(customer);
-            loadCustomerValues();
-            let modelel = $("#modelAddCustomer");
-            var modal = bootstrap.Modal.getInstance(modelel)
-            modal.hide();
+                let customer = new CustomerModel(cusId, cusName, cusAddress, cusContact, date);
+                customers.push(customer);
+                loadCustomerValues();
+                let modelel = $("#modelAddCustomer");
+                var modal = bootstrap.Modal.getInstance(modelel)
+                modal.hide();
+            }else {
+                alert("It Seems invalid Id!!!");
+            }
         }else {
             alert("Wrong Contact Number!!");
         }
@@ -107,4 +111,54 @@ $("#btn").on('click', function () {
     $("#customerDeleteBtn").css({
         background : "gray"
     })
+
+    $("#customerIdField").removeClass('is-invalid');
+    $("#customerContactField").removeClass('is-invalid');
+    $("#cusrtomerNameField").removeClass('is-invalid');
+    $("#customerAddressField").removeClass('is-invalid');
+
+
+    $("#customerIdField").removeClass('is-valid');
+    $("#customerContactField").removeClass('is-valid');
+    $("#cusrtomerNameField").removeClass('is-valid');
+    $("#customerAddressField").removeClass('is-valid');
 })
+
+
+$("#customerIdField").on('keyup',()=>{
+    let value = $("#customerIdField").val();
+    var regexId=/^C00-\d{3}$/;
+    if (regexId.test(value)){
+        $("#customerIdField").removeClass('is-invalid');
+        $("#customerIdField").addClass('is-valid');
+    }else {
+        $("#customerIdField").removeClass('is-valid');
+        $("#customerIdField").addClass('is-invalid');
+    }
+})
+
+$("#customerContactField").on('keyup',()=>{
+    var regexContact = /^\d{10}$/;
+    let val = $("#customerContactField").val();
+    if (regexContact.test(val)){
+        $("#customerContactField").removeClass('is-invalid');
+        $("#customerContactField").addClass('is-valid');
+    }else {
+        $("#customerContactField").removeClass('is-valid');
+        $("#customerContactField").addClass('is-invalid');
+    }
+
+});
+$("#customerAddressField").on('keyup',()=>{
+    const regex = /^.{4,}$/;
+    let val = $("#customerAddressField").val();
+    if (regex.test(val)){
+        $("#customerAddressField").removeClass('is-invalid');
+        $("#customerAddressField").addClass('is-valid');
+    }else {
+        $("#customerAddressField").removeClass('is-valid');
+        $("#customerAddressField").addClass('is-invalid');
+    }
+
+});
+

@@ -2,60 +2,70 @@
 
 export default class InventoryModel{
 
-    get productName() {
-        return this._productName;
+
+    get iCode() {
+        return this._iCode;
     }
 
-    set productName(value) {
-        this._productName = value;
+    set iCode(value) {
+        this._iCode = value;
     }
 
-    get buyingPrice() {
-        return this._buyingPrice;
+    get iName() {
+        return this._iName;
     }
 
-    set buyingPrice(value) {
-        this._buyingPrice = value;
+    set iName(value) {
+        this._iName = value;
     }
 
-    get sellingPrice() {
-        return this._sellingPrice;
+    get iBuyPrice() {
+        return this._iBuyPrice;
     }
 
-    set sellingPrice(value) {
-        this._sellingPrice = value;
+    set iBuyPrice(value) {
+        this._iBuyPrice = value;
     }
 
-    get qty() {
-        return this._qty;
+    get iQty() {
+        return this._iQty;
     }
 
-    set qty(value) {
-        this._qty = value;
+    set iQty(value) {
+        this._iQty = value;
     }
 
-    get brand() {
-        return this._brand;
+    get iBrand() {
+        return this._iBrand;
     }
 
-    set brand(value) {
-        this._brand = value;
+    set iBrand(value) {
+        this._iBrand = value;
     }
 
-    get expireDate() {
-        return this._expireDate;
+    get iSelPrice() {
+        return this._iSelPrice;
     }
 
-    set expireDate(value) {
-        this._expireDate = value;
+    set iSelPrice(value) {
+        this._iSelPrice = value;
     }
 
-    constructor(productName, buyingPrice, sellingPrice, qty, brand, expireDate) {
-        this._productName = productName;
-        this._buyingPrice = buyingPrice;
-        this._sellingPrice = sellingPrice;
-        this._qty = qty;
-        this._brand = brand;
-        this._expireDate = expireDate;
+    get iEXDate() {
+        return this._iEXDate;
+    }
+
+    set iEXDate(value) {
+        this._iEXDate = value;
+    }
+
+    constructor(iCode, iName, iBuyPrice, iQty, iBrand, iSelPrice, iEXDate) {
+        this._iCode = iCode;
+        this._iName = iName;
+        this._iBuyPrice = iBuyPrice;
+        this._iQty = iQty;
+        this._iBrand = iBrand;
+        this._iSelPrice = iSelPrice;
+        this._iEXDate = iEXDate;
     }
 }
