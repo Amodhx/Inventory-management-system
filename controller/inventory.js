@@ -30,7 +30,7 @@ $("#inventorySavebtn").on('click',()=>{
         let qty = $("#inputQTY").val();
         let brand = $("#inputBrand").val();
 
-        let item = new InventoryModel(id,productName, buyPrice, selPrice, qty, brand, exDate);
+        let item = new InventoryModel(id,productName, buyPrice,qty,brand, selPrice, exDate);
         inventories.push(item);
         loadInventoryTable();
 

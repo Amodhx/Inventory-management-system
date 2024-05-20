@@ -61,7 +61,6 @@ function loadCustomerValues() {
 
 // table row click
 $("#customerTbody").on('click', 'tr', function () {
-    console.log("AMOdh")
     let id = $(this).find('.customerId-val').text();
     let name = $(this).find('.customerName-val').text();
     let address = $(this).find('.customerAddress-val').text();

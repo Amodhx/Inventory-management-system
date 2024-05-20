@@ -525,7 +525,7 @@
 
     <div id="orderpgOrder" class="scroll">
         <h1>Orders</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#placeOrderModel" >Add Order</button>
+        <button id="AddOrderBtn" type="button" class="btn btn-primary" >Add Order</button>
         <div id="lineOrder"></div>
         <table id="tblOrders" class="table">
             <thead>
@@ -564,13 +564,11 @@
                 <div class="modal-body">
 
                     <div id="custDrop" class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button id="customerDrpBtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Select Customer Id
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul id="customerIdsDropDown" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">AAAA</a></li>
                         </ul>
                     </div>
                     <form id="custN" class="form-floating col-md-4">
@@ -583,13 +581,10 @@
                     </form>
 
                     <div id="itemDrop" class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button id="itemDropbtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Select Item Code
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <ul id="itemorderDrop" class="dropdown-menu">
                         </ul>
                     </div>
                     <form id="itemN" class="form-floating col-md-4">
@@ -621,15 +616,8 @@
                             <th scope="col">Delete</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>05</td>
-                            <td>Amodh Nanditha</td>
-                            <td>300.00</td>
-                            <td>5</td>
-                            <td>250.00</td>
-                            <td><input type="button" value="Delete"></td>
-                        </tr>
+                        <tbody id="placeOrderTable">
+
 
                         </tbody>
                     </table>
@@ -664,5 +652,6 @@
 <script src=".idea/script.js"></script>
 <script type="module" src="controller/inventory.js"></script>
 <script type="module" src="controller/customer.js"></script>
+<script type="module" src="controller/order.js"></script>
 </body>
 </html>

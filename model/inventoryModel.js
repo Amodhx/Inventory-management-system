@@ -2,7 +2,6 @@
 
 export default class InventoryModel{
 
-
     get iCode() {
         return this._iCode;
     }
