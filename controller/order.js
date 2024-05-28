@@ -148,6 +148,3 @@ $("#discountValue").on('keyup',()=>{
     $("#netPay").val(netTotal - (dis * +pre));
 });
 
-$("#placeOrderEndBtn").on('click',()=>{
-
-});
