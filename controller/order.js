@@ -94,7 +94,9 @@ $("#itemQtygetting").on('keyup',()=>{
 
 function genarateOrderId() {
     if (orders.length > 0){
-        let order = orders[orders.length - 1];
+        let order = orders[orders.length - 1].orderId;
+        genaratedOrderId = order+1;
+        console.log(genaratedOrderId);
     }else {
         genaratedOrderId = 1 ;
     }
@@ -139,6 +141,7 @@ function loadTablePlaceOrder() {
 
 function settingNetTotal() {
     $("#orderTotal").val(netTotal);
+    $("#netPay").val(netTotal);
 }
 
 
@@ -149,5 +152,38 @@ $("#discountValue").on('keyup',()=>{
 });
 
 $("#placeOrderEndingBtn").on('click',function (){
-    //place order code here
+    genarateOrderId();
+    genaratedOrderId ;
+    let custId = $('#customerDrpBtn').text();
+    let cusN = $("#CustomerNameOrder").val();
+    let number = new Date();
+    let netP = $("#netPay").val();
+    let orderModel = new OrderModel(genaratedOrderId , custId , cusN , number.getUTCFullYear() +" /"+ number.getMonth()+ "/ "+ number.getDate() , netP);
+    orders.push(orderModel);
+
+    let modelel = $("#placeOrderModel");
+    var modal = bootstrap.Modal.getInstance(modelel)
+    modal.hide()
+    loadOrderTable();
+
+
 });
+
+function loadOrderTable() {
+    $("#OrderTbl").empty();
+    orders.map(function (order) {
+        let val = `<tr>
+                <td>${order.orderId}</td>
+                <td>${order.orderCustomerId}</td>
+                <td>${order.orderCustomerName}</td>
+                <td>${order.orderDate}</td>
+                <td>${order.orderAmount}</td>
+                <td>Cash</td>
+                <td><input type="button" value="Delete"></td>
+            </tr>`;
+
+        $("#OrderTbl").append(val);
+    });
+
+
+}
