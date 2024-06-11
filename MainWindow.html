@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/dashBoadrd.css">
+    <link rel="stylesheet" href="css/customer.css">
+    <link rel="stylesheet" href="css/inventory.css">
+    <link rel="stylesheet" href="css/orders.css">
+</head>
+<style>
+    section {
+        width: 100%;
+        height: 100vh;
+        background-image: url("assets/annie-spratt-pKpipZVVEC0-unsplash.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    #DashBoadrdSection{
+        display: block;;
+    }
+    #customerSection{
+        display: none;
+    }
+    #inventorySection{
+        display: none;
+    }
+    #orderSection{
+        display: none;
+    }
+    #modelContent{
+        position: relative;
+        width: 283%;
+        left: -31vw;
+    }
+    #custDrop{
+        width: 178px;
+        position: relative;
+        left: 27px;
+        top: 5px;
+    }
+    #custN{
+        position: relative;
+        left: 31vw;
+        width: 23vw;
+        top: -39px;
+    }
+    #custA{
+        position: relative;
+        left: 65vw;
+        width: 23vw;
+        top: -95px;
+    }
+    #itemDrop{
+        width: 178px;
+        position: relative;
+        left: 27px;
+        top: -6vh;
+    }
+    #itemN{
+        position: relative;
+        left: 15vw;
+        width: 18vw;
+        top: -89px;
+    }
+    #itemQNH{
+        position: relative;
+        left: 50vw;
+        width: 10vw;
+        top: -205px;
+    }
+    #itemQTYGet{
+        position: relative;
+        left: 63vw;
+        width: 10vw;
+        top: -263px;
+    }
+    #btnAddcart{
+        position: relative;
+        left: 77vw;
+        width: 11vw;
+        top: -310px;
+    }
+    #tblItemCart{
+        top: -29vh;
+        position: relative;
+    }
+    #itemP{
+        position: relative;
+        top: -21vh;
+        width: 14vw;
+        left: 35vw;
+    }
+    #netTotal{
+        left: -30vw;
+    }
+    #discount{
+        left: -28vw;
+    }
+    #netPaytotal{
+        left: -32vw;
+    }
+
+
+</style>
+<body>
+<nav id="header" class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img id="headerImg"
+                 src="assets/Abstract_business_arrow_up_logo_icon._Vector_design_template.__1_-removebg-preview.png"
+                 alt="Bootstrap" width="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="list" class="navbar-nav">
+                <li class="nav-item">
+                    <span id="dashBoadrdbtn" class="nav-link" aria-current="page" href="dashBoard.html">Dashboard</span>
+                </li>
+                <li class="nav-item">
+                    <span id="inventorybtn" class="nav-link" href="inventory.html">Inventory</span>
+                </li>
+                <li class="nav-item">
+                    <span id="ordersBtn" class="nav-link" href="orders.html">Orders</span>
+                </li>
+                <li class="nav-item">
+                    <span id="customerBtn" class="nav-link" href="customer.html">Customer</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section id="DashBoadrdSection">
+
+    <h6 id="dashBoard"></h6>
+    <div id="trackOrder" class="div">
+        <i class="fa-regular fa-address-book fa-2x" style="color: #2accc2;"></i>
+        <h1>View Order</h1>
+
+        <div>
+            <h2>Order ID</h2>
+            <h2>Customer ID</h2>
+            <h2>Customer NIC</h2>
+            <div id="oid"></div>
+            <div id="cid"></div>
+        </div>
+        <input type="text" class="form-control" id="floatingInput" placeholder="Enter Order ID / Ref ID">
+        <button type="button" class="btn btn-primary btn-sm"> View</button>
+    </div>
+    <div id="statics" class="div">
+        <i class="fa-solid fa-chart-simple fa-2x" style="color: #548EFF;"></i>
+        <h1>Statics</h1>
+        <div id="p1" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 25%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p2" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 33%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p3" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 54%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p4" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 25%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p5" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 78%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p6" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 94%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p7" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 65%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p8" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 40%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p9" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 25%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p10" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 40%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p11" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 55%; width: 18px; border-radius: 12px"></div>
+        </div>
+        <div id="p12" class="progress" style="width: 10px; height: 160px; transform: rotate(180deg)" role="progressbar"
+             aria-label="Basic example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="height: 50%; width: 18px; border-radius: 12px"></div>
+        </div>
+
+        <h4 id="jan">Jan</h4>
+        <h4 id="feb">Feb</h4>
+        <h4 id="mar">Mar</h4>
+        <h4 id="apr">Apr</h4>
+        <h4 id="may">May</h4>
+        <h4 id="jun">Jun</h4>
+        <h4 id="jul">Jul</h4>
+        <h4 id="aug">Aug</h4>
+        <h4 id="sep">Sep</h4>
+        <h4 id="oct">Oct</h4>
+        <h4 id="nov">Nov</h4>
+        <h4 id="dec">Dec</h4>
+
+    </div>
+    <div id="calender" class="div">
+        <div class="calender">
+
+            <div class="month">
+                <h1>January - 2013</h1>
+                <span class="day">1</span>
+                <span class="day">2</span>
+                <span class="day">3</span>
+                <span class="day">4</span>
+                <span class="day">5</span>
+                <span class="day">6</span>
+                <span class="day">7</span>
+                <span class="day">8</span>
+                <span class="day">9</span>
+                <span class="day">10</span>
+                <span class="day">11</span>
+                <span class="day">12</span>
+                <span class="day">13</span>
+                <span class="day">14</span>
+                <span class="day">15</span>
+                <span class="day">16</span>
+                <span class="day">17</span>
+                <span class="day">18</span>
+                <span class="day">19</span>
+                <span class="day">20</span>
+                <span class="day">21</span>
+                <span class="day">22</span>
+                <span class="day">23</span>
+                <span class="day current">24</span>
+                <span class="day">25</span>
+                <span class="day">26</span>
+                <span class="day">27</span>
+                <span class="day">28</span>
+                <span class="day">29</span>
+                <span class="day">30</span>
+                <span class="day">31</span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div id="recentOrder" class="div">
+        <div>
+            <img src="assets/Customer%20Insight.png">
+            <h4>Customer</h4>
+            <h1>Amodh Weerasinghe</h1>
+        </div>
+        <div>
+            <img src="assets/Banknotes.png" alt="banknote.png">
+            <h4>Amount</h4>
+            <h1>21,000 LKR</h1>
+        </div>
+        <div>
+            <img src="assets/Card%20Payment.png" alt="paymen.png">
+            <h4>Type</h4>
+            <h1>Card</h1>
+        </div>
+        <div>
+            <img src="assets/Receipt.png" alt="recipt.png">
+            <h4>Items</h4>
+        </div>
+    </div>
+    <div id="addOrder" class="div">
+        <div>
+            <i class="fa-solid fa-cart-plus fa-4x" style="color: #0038FF;"></i>
+            <button type="button" class="btn btn-outline-primary">Add Order</button>
+        </div>
+    </div>
+</section>
+<section id="customerSection">
+    <h6 id="customer"></h6>
+    <div id="ovrCus" class="div">
+
+        <h1>Overoll Customers</h1>
+
+        <div id="categoryCus" class="secformdiv">
+            <h4>Total Customers</h4>
+            <h6>24 <br> Last 07 Days</h6>
+        </div>
+
+        <div id="search" class="input-group mb-3">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Dropdown
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+
+        <button id="btn" type="button" class="btn btn-primary">Add Customer</button>
+
+        <div id="line1Cus"></div>
+    </div>
+
+    <div id="order" class="scroll">
+        <h1>Customers</h1>
+        <div id="lineCus"></div>
+        <table id="tblCus" class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Full name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Date</th>
+            </tr>
+            </thead>
+            <tbody id="customerTbody">
+
+
+            </tbody>
+        </table>
+    </div>
+    <div id="modelAddCustomer" class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 id="customerModelHeader" class="modal-title fs-5">Add new Customer</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Customer ID</label>
+                            <input id="customerIdField" placeholder="C00-001" type="text" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label  class="form-label">Contact Number</label>
+                            <input id="customerContactField" type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Customer Name</label>
+                            <input id="cusrtomerNameField" type="text" class="form-control">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Address</label>
+                            <input id="customerAddressField" type="text" class="form-control">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="customerDeleteBtn" type="button" class="btn btn-secondary">Close</button>
+                    <button id="customerSavebtn" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="inventorySection">
+    <h6 id="inventory"></h6>
+    <div id="ovrInven" class="div">
+
+        <h1>Overoll Inventory</h1>
+
+        <div id="category" class="secformdiv">
+            <h4>Categories</h4>
+            <h6>24 <br> Last 07 Days</h6>
+        </div>
+
+        <div id="products" class="secformdiv">
+            <h4>Total Products</h4>
+            <h6>24</h6>
+        </div>
+
+        <div id="selling" class="secformdiv">
+            <h4>Total Selling</h4>
+            <h6>24 <br> Last 07 Days</h6>
+            <h5 id="amount"> 24,000 LKR </h5>
+        </div>
+
+        <div id="stock" class="secformdiv">
+            <h4>Low Stock</h4>
+            <h6>24 <br>Low</h6>
+            <h5 id="stockAv"> Out of Stock <br> 4</h5>
+        </div>
+
+        <div id="line1"></div>
+        <div id="line2"></div>
+        <div id="line3"></div>
+    </div>
+
+    <div id="items" class="scroll">
+        <h1>Items</h1>
+        <button id="btnAddItem" type="button" class="btn btn-primary" >Add Item</button>
+        <div id="line"></div>
+        <table id="tbl" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Product</th>
+                <th scope="col">Buying price</th>
+                <th scope="col">QTY</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Selling price</th>
+                <th scope="col">Expire date</th>
+                <th scope="col">Availability</th>
+            </tr>
+            </thead>
+            <tbody id="inventoryTbody">
+
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div   class="modal fade" id="exampleModalInventory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ItemModelHeader">Add Inventory</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Item Code</label>
+                            <input  type="text" class="form-control" id="inputProductId">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Product</label>
+                            <input  type="text" class="form-control" id="inputProduct">
+                        </div>
+                        <div class="col-md-6">
+                            <label  class="form-label">Buying price</label>
+                            <input type="text" class="form-control" id="inputbuyPrice">
+                        </div>
+                        <div class="col-12">
+                            <label  class="form-label">Expire date</label>
+                            <input type="date" class="form-control" id="inputEXDate">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">Selling price</label>
+                            <input type="text" class="form-control" id="inputSelprice">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">QTY</label>
+                            <input type="text" class="form-control" id="inputQTY">
+                        </div>
+                        <div class="col-md-6">
+                            <label  class="form-label">Brand</label>
+                            <select id="inputBrand" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>Munchee</option>
+                                <option>Maliben</option>
+                                <option>Kist</option>
+                                <option>Munchee</option>
+                            </select>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="itemModelClose" type="button" class="btn btn-secondary">Close</button>
+                    <button id="inventorySavebtn" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="orderSection">
+    <h6 id="orders"></h6>
+    <div id="ovrOrders" class="div">
+
+        <h1>Overoll Orders</h1>
+
+        <div id="categoryOrder" class="secformdiv">
+            <h4>Categories</h4>
+            <h6>24 <br> Last 07 Days</h6>
+        </div>
+
+        <div id="productsOrder" class="secformdiv">
+            <h4>Total Products</h4>
+            <h6>24 <br> Last 07 Days</h6>
+        </div>
+
+        <div id="sellingOrders" class="secformdiv">
+            <h4>Total Amount</h4>
+            <h6>24 <br> Last 07 Days</h6>
+            <h5 id="amountpgOrder"> 24,000 LKR </h5>
+        </div>
+
+        <div id="stockOrders" class="secformdiv">
+            <h4>Low Stock</h4>
+            <h6>24 <br>Low</h6>
+            <h5 id="stockAvpgOrder"> Out of Stock <br> 4</h5>
+        </div>
+
+        <div id="line1Order"></div>
+        <div id="line2Order"></div>
+        <div id="line3Order"></div>
+    </div>
+
+    <div id="orderpgOrder" class="scroll">
+        <h1>Orders</h1>
+        <button id="AddOrderBtn" type="button" class="btn btn-primary" >Add Order</button>
+        <div id="lineOrder"></div>
+        <table id="tblOrders" class="table">
+            <thead>
+            <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Customer ID</th>
+                <th scope="col">Customer name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Type</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody id="OrderTbl">
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="placeOrderModel" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div id="modelContent" class="modal-content" >
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Place Order</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div id="custDrop" class="dropdown">
+                        <button id="customerDrpBtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Customer Id
+                        </button>
+                        <ul id="customerIdsDropDown" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">AAAA</a></li>
+                        </ul>
+                    </div>
+                    <form id="custN" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="CustomerNameOrder" placeholder="name@example.com">
+                        <label for="CustomerNameOrder">Customer Name</label>
+                    </form>
+                    <form id="custA" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="CustomerAddressOrder" placeholder="name@example.com">
+                        <label for="CustomerAddressOrder">Customer Address</label>
+                    </form>
+
+                    <div id="itemDrop" class="dropdown">
+                        <button id="itemDropbtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Item Code
+                        </button>
+                        <ul id="itemorderDrop" class="dropdown-menu">
+                        </ul>
+                    </div>
+                    <form id="itemN" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="ItemName" placeholder="name@example.com">
+                        <label for="ItemName">Item Name</label>
+                    </form>
+                    <form id="itemP" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="ItemPrice" placeholder="name@example.com">
+                        <label for="ItemPrice">Item Price</label>
+                    </form>
+                    <form id="itemQNH" class="form-floating col-md-3">
+                        <input type="email" class="form-control" id="ItemQtyOnHand" placeholder="name@example.com">
+                        <label for="ItemQtyOnHand">QTY on hand</label>
+                    </form>
+                    <form id="itemQTYGet" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="itemQtygetting" placeholder="name@example.com">
+                        <label for="itemQtygetting">QTY Buy</label>
+                    </form>
+                    <button id="btnAddcart" type="button" class="btn btn-primary">Add to cart!</button>
+
+                    <table id="tblItemCart" class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Item Code</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody id="placeOrderTable">
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <form id="netTotal" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="orderTotal" placeholder="name@example.com">
+                        <label for="orderTotal">Total Amount</label>
+                    </form>
+                    <form id="discount" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="discountValue" placeholder="name@example.com">
+                        <label for="discountValue">Discount(%)</label>
+                    </form>
+                    <form id="netPaytotal" class="form-floating col-md-4">
+                        <input type="email" class="form-control" id="netPay" placeholder="name@example.com">
+                        <label for="netPay">Net Pay</label>
+                    </form>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="placeOrderEndingBtn" type="button" class="btn btn-primary" >Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script type="module" src="controller/inventory.js"></script>
+<script type="module" src="controller/customer.js"></script>
+<script type="module" src="controller/order.js"></script>
+</body>
+</html>
