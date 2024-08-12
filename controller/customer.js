@@ -1,6 +1,33 @@
 import CustomerModel from "../model/customerModel.js";
 import {customers} from "../db/db.js";
 
+window.onload = function(){
+    
+    const http =new XMLHttpRequest();
+    http.onreadystatechange =() =>{
+        //check state
+        if (http.readyState == 4){
+            if (http.status == 200){
+                const data = JSON.parse(http.responseText);
+                data.forEach((item) => {
+                    customers.push(new CustomerModel(item.id,item.name,item.address,item.contact_number,item.date));
+                });
+                loadCustomerValues();
+            }else {
+                console.error("Failed");
+                console.error("Status Received" , http.status);
+                console.error("Processing Stage" , http.readyState);
+            }
+        }else{
+            console.log("Processing stage", http.readyState);
+        }
+    }
+ 
+         http.open("GET","http://localhost:8080/inventory/customer",true);
+         http.setRequestHeader("Content-Type","application/json");
+         http.send();
+
+}
 
 let index;
 $("#customerSavebtn").on('click', () => {
@@ -19,7 +46,6 @@ $("#customerSavebtn").on('click', () => {
         var regexId=/^C00-\d{3}$/;
         var regexContact = /^\d{10}$/;
         if (regexContact.test($("#customerContactField").val())) {
-            if (regexId.test($("#customerIdField").val())) {
                 let cusId = $("#customerIdField").val();
                 let cusContact = $("#customerContactField").val();
                 let cusName = $("#cusrtomerNameField").val();
@@ -28,13 +54,41 @@ $("#customerSavebtn").on('click', () => {
 
                 let customer = new CustomerModel(cusId, cusName, cusAddress, cusContact, date);
                 customers.push(customer);
+
+                const CustomerDTO = {
+                    id : 0,
+                    name : cusName,
+                    address : cusAddress,
+                    contact_number : cusContact,
+                    date : date
+                }
+
+                const CustomerJson = JSON.stringify(CustomerDTO);
+
+                const http =new XMLHttpRequest();
+                http.onreadystatechange =() =>{
+                    //check state
+                    if (http.readyState == 4){
+                        if (http.status == 200){
+                            alert("saved!!!!!");
+                        }else {
+                            console.error("Failed");
+                            console.error("Status Received" , http.status);
+                            console.error("Processing Stage" , http.readyState);
+                        }
+                    }else{
+                        console.log("Processing stage", http.readyState);
+                    }
+                }
+             
+                     http.open("POST","http://localhost:8080/inventory/customer",true);
+                     http.setRequestHeader("Content-Type","application/json");
+                     http.send(CustomerJson);
+
                 loadCustomerValues();
                 let modelel = $("#modelAddCustomer");
                 var modal = bootstrap.Modal.getInstance(modelel)
                 modal.hide();
-            }else {
-                alert("It Seems invalid Id!!!");
-            }
         }else {
             alert("Wrong Contact Number!!");
         }
