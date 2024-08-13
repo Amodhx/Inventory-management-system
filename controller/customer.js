@@ -27,16 +27,51 @@ window.onload = function(){
          http.setRequestHeader("Content-Type","application/json");
          http.send();
 
+
+
+         
+
 }
 
 let index;
 $("#customerSavebtn").on('click', () => {
     let btnText = $("#customerSavebtn").text();
     if (btnText == "Update") {
+
+        //Todo:update 
         customers[index].customerId = $("#customerIdField").val();
         customers[index].customerName = $("#cusrtomerNameField").val();
         customers[index].customerAddress = $("#customerAddressField").val();
         customers[index].customerContact = $("#customerContactField").val();
+        
+        const CustomerDTO = {
+            id : $("#customerIdField").val(),
+            name :  $("#cusrtomerNameField").val(),
+            address : $("#customerAddressField").val(),
+            contact_number : $("#customerContactField").val(),
+            date : ""
+        }
+
+        const http = new XMLHttpRequest();
+        
+        const CustomerJson = JSON.stringify(CustomerDTO);
+
+        http.onreadystatechange = ()=>{
+            if(http.readyState == 4){
+                if(http.status == 200){
+                    alert("Customer Updatd");
+                }else{
+                    console.log("Status ",http.status);
+                    console.log("Stage ",http.readyState);
+                }
+            }else{
+                console.log("Processing Stage", http.readyState);
+            }
+        }
+
+        http.open("PUT", "http://localhost:8080/inventory/customer",true);
+        http.setRequestHeader("Content-Type","application/json");
+        http.send(CustomerJson);
 
         loadCustomerValues();
         let modelel = $("#modelAddCustomer");
@@ -140,13 +175,38 @@ $("#customerTbody").on('click', 'tr', function () {
 
 $("#customerDeleteBtn").on('click',function () {
     let btnText = $("#customerDeleteBtn").text();
+    let idtoDelete = $("#customerIdField").val();
     if (btnText == "Delete") {
         customers.splice(index, 1);
+
+        const http = new XMLHttpRequest();
+        http.onreadystatechange =() =>{
+            //check state
+            if (http.readyState == 4){
+                if (http.status == 200){
+                    alert("Deleted!!!!!");
+                }else {
+                    console.error("Failed");
+                    console.error("Status Received" , http.status);
+                    console.error("Processing Stage" , http.readyState);
+                }
+            }else{
+                console.log("Processing stage", http.readyState);
+            }
+        }
+
+        http.open("DELETE","http://localhost:8080/inventory/customer",true);
+        http.setRequestHeader("Content-Type","application/json")
+        http.send(idtoDelete);
+
+
+
         loadCustomerValues();
         let modelel = $("#modelAddCustomer");
         var modal = bootstrap.Modal.getInstance(modelel)
         modal.hide()
     }else {
+
         let modelel = $("#modelAddCustomer");
         var modal = bootstrap.Modal.getInstance(modelel)
         modal.hide()

@@ -1,6 +1,34 @@
 import InventoryModel from "../model/inventoryModel.js";
 import {customers, inventories} from "../db/db.js";
 
+loadDatafromdatabase();
+
+function loadDatafromdatabase(){
+    const http = new XMLHttpRequest();
+    console.log("AAA")
+    http.onreadystatechange= ()=>{
+        if(http.readyState == 4){
+            if(http.status == 200){
+                const data = JSON.parse(http.responseText);
+                console.log(data)
+                data.forEach(item => {
+                    inventories.push(new InventoryModel(item.id,item.product_name,item.buy_price,item.qty,item.brand,item.sel_price,item.expire_date));
+                });
+                loadInventoryTable();
+            }else{
+                console.log("stage ",http.readyState);
+                console.log("status ", http.status)
+            }
+        }else{
+            console.log("Processing stage ",http.readyState)
+        }
+    }
+
+    http.open("GET","http://localhost:8080/inventory/item",true);
+    http.setRequestHeader("Content-Type","application/json");
+    http.send();
+}
+
 
 
 // inventory save item on btn click
@@ -15,8 +43,38 @@ $("#inventorySavebtn").on('click',()=>{
         inventories[index].qty = $("#inputQTY").val();
         inventories[index].brand = $("#inputBrand").val();
         inventories[index].expireDate = $("#inputEXDate").val();
-
         loadInventoryTable();
+        const ItemDto = {
+            "id":$("#inputProductId").val(),
+            "product_name" : $("#inputProduct").val(),
+            "buy_price": $("#inputbuyPrice").val(),
+            "sel_price" : $("#inputSelprice").val(),
+            "expire_date" : $("#inputEXDate").val(), 
+            "qty" : $("#inputQTY").val(), 
+            "brand" : $("#inputBrand").val()
+        }
+
+        const ItemDtoJson = JSON.stringify(ItemDto);
+
+        const http = new XMLHttpRequest();
+
+        http.onreadystatechange = () =>{
+            if(http.readyState == 4){
+                if(http.status == 200){
+                    alert("Item Updated!!!");
+                }else{
+                    console.log("Status ",http.status);
+                }
+            }else{
+                console.log("Processing stage ",http.readyState)
+            }
+        }
+
+        http.open("PUT", "http://localhost:8080/inventory/item", true);
+        http.setRequestHeader("Content-Type","application/json");
+        http.send(ItemDtoJson);
+
+
         let modelel = $("#exampleModalInventory");
         var modal = bootstrap.Modal.getInstance(modelel)
         modal.hide();
@@ -29,6 +87,36 @@ $("#inventorySavebtn").on('click',()=>{
         let selPrice = $("#inputSelprice").val();
         let qty = $("#inputQTY").val();
         let brand = $("#inputBrand").val();
+
+        const ItemDto = {
+            "id":0,
+            "product_name" : productName,
+            "buy_price": buyPrice,
+            "sel_price" : selPrice,
+            "expire_date" : exDate, 
+            "qty" : qty, 
+            "brand" : brand
+        }
+
+        const ItemDtoJson = JSON.stringify(ItemDto);
+
+        const http = new XMLHttpRequest();
+
+        http.onreadystatechange = () =>{
+            if(http.readyState == 4){
+                if(http.status == 200){
+                    alert("Item Saved!!!")
+                }else{
+                    console.log("Status ",http.status);
+                }
+            }else{
+                console.log("Processing stage ",http.readyState)
+            }
+        }
+
+        http.open("POST", "http://localhost:8080/inventory/item", true);
+        http.setRequestHeader("Content-Type","application/json");
+        http.send(ItemDtoJson);
 
         let item = new InventoryModel(id,productName, buyPrice,qty,brand, selPrice, exDate);
         inventories.push(item);
@@ -139,10 +227,32 @@ $("#inputProductId").on('keyup',()=>{
 // item delete or model close
 $("#itemModelClose").on('click',function (){
     let btnText = $("#itemModelClose").text();
+    let idtoDelete = $("#inputProductId").val();
     if (btnText == "Delete") {
         console.log("delete")
         inventories.splice(index, 1);
-        loadInventoryTable();
+        
+        const http = new XMLHttpRequest();
+        http.onreadystatechange =() =>{
+            if(http.readyState == 4){
+                if(http.status == 200){
+                    alert("Item Deleted");
+                    loadInventoryTable();
+                }else{
+                    console.log("Status ",http.status)
+                }
+            }else{
+                console.log('Processing Stage ',http.readyState)
+            }
+        }
+
+        http.open("DELETE","http://localhost:8080/inventory/item",true);
+        http.setRequestHeader("Content-Type","application/json");
+        http.send(idtoDelete);
+
+
+
+
         let modelel = $("#exampleModalInventory");
         var modal = bootstrap.Modal.getInstance(modelel)
         modal.hide()
