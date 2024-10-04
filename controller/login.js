@@ -10,10 +10,11 @@ $("#loginBtn").on('click',()=>{
 
 
    const UserDTO = {
-      id: idF,
-      user_name:user_nameF,
-      password:passwordF
-  }
+    "id":1,
+    "name" : "Amo",
+    "password" : "123"
+}
+
    console.log(UserDTO);
    const userJSON = JSON.stringify(UserDTO);
 
@@ -23,13 +24,14 @@ $("#loginBtn").on('click',()=>{
        if (http.readyState == 4){
            if (http.status == 200){
 
-            const data = JSON.parse(http.responseText);
-            data.forEach((item) => {
-              if(item.user_name == user_nameF && item.password == passwordF){
+        //     const data = JSON.parse(http.responseText);
+        //     data.forEach((item) => {
+        //       if(item.user_name == user_nameF && item.password == passwordF){
 
                window.location.assign('MainWindow.html');
-              }
-            });
+        //       }
+        //     }
+        // )
            }else {
                console.error("Failed");
                console.error("Status Received" , http.status);
@@ -40,9 +42,9 @@ $("#loginBtn").on('click',()=>{
        }
    }
 
-        http.open("get","http://localhost:8080/inventory/login",true);
+        http.open("GET","http://localhost:8080/inventory/login",true);
         http.setRequestHeader("Content-Type","application/json");
-        http.send(userJSON);
+        http.send(UserDTO);
 
       
 });

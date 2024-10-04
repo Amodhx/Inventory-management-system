@@ -3,6 +3,36 @@ import OrderModel from "../model/orderModel.js";
 import OrderDetailsModel from "../model/OrderDetailsModel.js";
 import {OrderItemTableList} from "../model/tm/orderItemTableList.js";
 
+loadOrderDataFromDataBase();
+
+function loadOrderDataFromDataBase(){
+    const http = new XMLHttpRequest();
+
+    http.onreadystatechange =() =>{
+        //check state
+        if (http.readyState == 4){
+            if (http.status == 200){
+                const data = JSON.parse(http.responseText);
+                data.forEach((item) => {
+                    orders.push(new OrderModel(item.id,item.customer_id,item.customer_name,item.date,item.amount,item.type));
+                });
+                loadOrderTable();
+            }else {
+                console.error("Failed");
+                console.error("Status Received" , http.status);
+                console.error("Processing Stage" , http.readyState);
+            }
+        }else{
+            console.log("Processing stage", http.readyState);
+        }
+    }
+
+   
+
+    http.open("GET","http://localhost:8080/inventory/order",true);
+    http.setRequestHeader("Content-Type","application/json");
+    http.send();
+}
 
 let genaratedOrderId;
 let orderItemTableArray = [];
@@ -53,7 +83,7 @@ $("#itemorderDrop").on('click', 'li', function () {
     $("#itemDropbtn").text(itemCOde)
 
     inventories.map(function (item) {
-        if (itemCOde === item.iCode) {
+        if (itemCOde == item.iCode) {
             $("#ItemName").val(item.iName);
             $("#ItemPrice").val(item.iSelPrice);
             $("#ItemQtyOnHand").val(item.iQty);
@@ -68,9 +98,8 @@ $("#customerIdsDropDown").on('click', 'li', function () {
     let custId = $(this).find('.dropdown-item').text();
 
     $("#customerDrpBtn").text(custId)
-
     customers.map(function (customer) {
-        if (custId === customer.customerId) {
+        if (custId == customer.customerId) {
             $("#CustomerNameOrder").val(customer.customerName);
             $("#CustomerAddressOrder").val(customer.customerAddress);
         }
@@ -153,7 +182,6 @@ $("#discountValue").on('keyup',()=>{
 
 $("#placeOrderEndingBtn").on('click',function (){
     genarateOrderId();
-    genaratedOrderId ;
     let custId = $('#customerDrpBtn').text();
     let cusN = $("#CustomerNameOrder").val();
     let number = new Date();
@@ -165,9 +193,55 @@ $("#placeOrderEndingBtn").on('click',function (){
     var modal = bootstrap.Modal.getInstance(modelel)
     modal.hide()
     loadOrderTable();
+    $("#placeOrderTable").empty();
+
+    
+    const OrderDTO = {
+        "id":genaratedOrderId,
+        "customer_id" : custId,
+        "customer_name" :cusN,
+        "date" : number,
+        "amount" : netP,
+        "type" :"cash"
+    }
+    console.log("Order DTO",OrderDTO);
+
+    // const OrderJson = JSON.stringify(OrderDTO);
+    const http = new XMLHttpRequest();
+    const list = [];
+    orderItems.map(function (item){
+        let OrderItemDTO ={
+            "order_id" : genaratedOrderId,
+            "item_id" : item.orderDetailItemCode
+        }
+        list.push(OrderItemDTO);
+        
+    })
+    const JsonOBJ = new FormData();
+    JsonOBJ.append("obj1",JSON.stringify(OrderDTO));
+    JsonOBJ.append("obj2",JSON.stringify(list));
+
+
+    http.onreadystatechange = ()=>{
+        if(http.readyState == 4){
+            if(http.status == 200){
+                alert("Order Placed!")
+            }else{
+                console.log("status ",http.status)
+            }
+        }else{
+            console.log("Processing stage ",http.readyState)
+        }
+    }
+    http.open("POST","http://localhost:8080/inventory/transaction",true);
+    http.setRequestHeader("Content-Type","application/json");
+    http.setRequestHeader("obj1",JSON.stringify(OrderDTO));
+    http.send(JSON.stringify(list));
 
 
 });
+
+
 
 function loadOrderTable() {
     $("#OrderTbl").empty();
